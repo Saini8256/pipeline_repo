@@ -12,7 +12,7 @@ pipeline {
                     echo "This is the second stage step"
             }
         }
-        stage(STAGE1){
+        stage(STAGE3){ 
             steps{
                     sh 'sleep 20'
                     echo "This is the third stage step"
