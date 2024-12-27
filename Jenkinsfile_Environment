@@ -9,9 +9,9 @@ pipeline{
         stage('CHECKOUT'){
                 steps{
                     script{
-                        git branch: "$(env.GIT_BRANCH)",
-                        credentialsId: "$(env.GIT_CREDENTIALS)",
-                        url: "$(env.GIT_URL)"
+                        git branch: "${env.GIT_BRANCH}",
+                        credentialsId: "${env.GIT_CREDENTIALS}",
+                        url: "${env.GIT_URL}"
                     }
 
                 }
@@ -21,6 +21,7 @@ pipeline{
                     sh '''
                         ls -lrt
                         echo $GIT_BRANCH
+                        env
                     '''
 
                 }
