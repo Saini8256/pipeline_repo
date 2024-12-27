@@ -8,9 +8,10 @@ pipeline{
     stages{
         stage('Checkout') {
             steps {
-                git branch: 'main', 
-                credentialsId: 'GitHub_Saini825', 
-                url: 'https://github.com/Saini8256/pipeline_repo.git'
+                checkout([$class: 'GitSCM',
+                branches: [[name: "${GIT_BRANCH}"]],
+                userRemoteConfigs: [[credentialsId: "${GIT_CREDENTIALS}", 
+                url: "${GIT_URL}"]]])
             }
         }
        stage('CHECK') {
