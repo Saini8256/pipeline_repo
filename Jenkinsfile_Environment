@@ -6,21 +6,23 @@ pipeline{
         GIT_CREDENTIALS = 'GitHub_Saini8256'
     }
     stages{
-        stage('CHECKOUT'){
-                steps{
-                    script{
-                        git branch: "${env.GIT_BRANCH}", credentialsId: "${env.GIT_CREDENTIALS}", url: "${env.GIT_URL}"
-                    }
-
+        stage('CHECKOUT') {
+            steps{
+                script{
+                    git branch: "${env.GIT_BRANCH}", 
+                    credentialsId: "${env.GIT_CREDENTIALS}",
+                    url: "${env.GIT_URL}"
                 }
+            }
         }
-//       stage('CHECK'){
-//                steps{
-//                    sh '''
- //                       ls -lrt
- //                       echo $GIT_BRANCH
- //                   '''
- //               }
- //       }    
+       stage('CHECK') {
+            steps {
+                sh '''
+                    ls -lrt
+                    echo $GIT_BRANCH
+                    env
+                '''
+            }
+        }    
     }
 }
