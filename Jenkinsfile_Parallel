@@ -9,11 +9,14 @@ pipeline{
         stage('Parallel Stage') {
             Parallel{
                 stage('A'){
-                    sh 'sleep 5'
+                    steps{
+                        sh 'sleep 5'
+                    }
                 }
                 stage('B'){
-                    sh 'sleep 10'
-                }
+                    steps{
+                        sh 'sleep 15'
+                    }
             }
         }
     }
