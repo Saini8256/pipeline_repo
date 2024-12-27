@@ -1,21 +1,18 @@
 pipeline{
     agent any
-    environment{
-        GIT_URL = 'https://github.com/Saini8256/pipeline_repo.git'
-        GIT_BRANCH = 'main'
-        GIT_CREDENTIALS = 'GitHub_Saini8256'
-    }
     stages{
         stage('Parallel Stage') {
             Parallel{
                 stage('A'){
                     steps{
                         sh 'sleep 5'
+                        echo "Stage A"
                     }
                 }
                 stage('B'){
                     steps{
                         sh 'sleep 15'
+                        echo "Stage B"
                     }
                 }
             }
