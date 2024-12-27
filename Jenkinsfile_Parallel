@@ -1,7 +1,12 @@
 pipeline{
     agent any
     stages{
-        stage('Parallel Stage') {
+        stage('First Stage'){
+            steps{
+                echo "Pipeline for Parallel stages"
+            }
+        }
+        stage('Parallel Stage'){
             Parallel{
                 stage('A'){
                     steps{
