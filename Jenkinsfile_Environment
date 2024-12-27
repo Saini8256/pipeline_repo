@@ -21,7 +21,6 @@ pipeline{
                     sh '''
                         ls -lrt
                         echo $GIT_BRANCH
-                        env
                     '''
 
                 }
