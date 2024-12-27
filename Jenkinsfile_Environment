@@ -14,13 +14,13 @@ pipeline{
 
                 }
         }
-        stage('CHECK'){
-                steps{
-                    sh '''
-                        ls -lrt
-                        echo $GIT_BRANCH
-                    '''
-                }
-        }    
+//       stage('CHECK'){
+//                steps{
+//                    sh '''
+ //                       ls -lrt
+ //                       echo $GIT_BRANCH
+ //                   '''
+ //               }
+ //       }    
     }
 }
