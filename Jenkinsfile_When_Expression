@@ -13,7 +13,7 @@ pipeline {
                 script {
                     checkout scmGit(branches: [[name: 'main']],
                     userRemoteConfigs: [[credentialsId: 'github_Saini8256',
-                    url: 'https://github.com/Saini8256/pipeline_repo']])
+                    url: 'https://github.com/Saini8256/pipeline_repo.git']])
                 }
             }
         }
