@@ -13,8 +13,8 @@ pipeline {
             steps {
                 script {
                     checkout scmGit(branches: [[name: 'main']],
-                    userRemoteConfigs: [[credentialsId: 'github_jaintpharsha',
-                    url: 'https://github.com/jaintpharsha/oct-2024.git']])
+                    userRemoteConfigs: [[credentialsId: 'github_Saini8256',
+                    url: 'https://github.com/saini8256/pipeline_repo.git']])
                 }
             }
         }
