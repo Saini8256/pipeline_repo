@@ -1,5 +1,10 @@
 pipeline{
     agent any
+    environment{
+        GIT_URL = 'https://github.com/Saini8256/pipeline_repo.git'
+        GIT_BRANCH = 'main'
+        GIT_CREDENTIALS = 'GitHub_Saini8256'
+    }
     stages{
         stage('Checkout') {
             steps {
