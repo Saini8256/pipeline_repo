@@ -6,19 +6,16 @@ pipeline {
         choices: ['STAGE1', 'STAGE2'], 
         description: 'Choose stage to build'
     }
-
     stages {
 
         stage('CHECKOUT') {
             steps {
                 script {
                     checkout scmGit(branches: [[name: 'main']],
-                    userRemoteConfigs: [[credentialsId: 'github_Saini8256',
-                    url: 'https://github.com/saini8256/pipeline_repo.git']])
+                    userRemoteConfigs: [[credentialsId: 'github_Saini8256', url: 'https://github.com/Saini8256/pipeline_repo.git']])
                 }
             }
         }
-
         stage('STAGE1') {
             when {
                 expression {
@@ -30,7 +27,6 @@ pipeline {
                sh 'sleep 4'
             }
         }
-
         stage('STAGE2') {
             when {
                 expression {
@@ -43,7 +39,6 @@ pipeline {
             }
         }
     }
-
     post {
         always {
             cleanWs()
