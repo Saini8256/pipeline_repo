@@ -22,10 +22,10 @@ pipeline{
             steps{
                 sh 'sleep 15'
                 echo "These are the Jenkins Parameters"
-                echo "Boolean Parameter Name: ${params.BOOLEAN_PARAMATER}"
-                echo "String Parameter Name: ${params.STRING_PARAMATER}"
-                echo "Choice Parameter Name: ${params.CHOICE_PARAMETER}"
-                echo "Choice Parameter Name: ${params.FILE_LOCATION}"
+                echo "Boolean Parameter: ${params.BOOLEAN_PARAMATER}"
+                echo "String Parameter: ${params.STRING_PARAMATER}"
+                echo "Choice Parameter: ${params.CHOICE_PARAMETER}"
+                echo "File Parameter: ${params.FILE_LOCATION}"
             }
         }
     }
