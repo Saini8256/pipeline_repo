@@ -1,21 +1,21 @@
 pipeline{
     agent any
-    options {
+    /*options {
         ansiColor('xterm')
         buildDiscarder(logRotator(numToKeepStr: '3'))
         disableConcurrentBuilds(abortPrevious: true)
         retry(2)
         timeout(time: 1, unit: 'HOURS')
         timestamps()
-    }
+    }*/
     triggers{
-        cron(*/2 * * * *)
+        cron(* * * * *)
     }
-        stages{
-            stage('First Stage'){
-                steps{
-                    sh 'sleep 10'
-                }
+    stages{
+        stage('First Stage'){
+            steps{
+                sh 'sleep 10'
             }
         }
+    }
 }
