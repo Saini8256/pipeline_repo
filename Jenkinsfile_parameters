@@ -2,17 +2,25 @@ pipeline{
     agent any
     parameters {
         booleanParam defaultValue: true, name: 'BOOLEAN_PARAMATER'
+        
         string defaultValue: 'Default_String_Params', 
         description: 'This is the description for string params', 
         name: 'STRING_PARAMATER', 
         trim: true
+        
+        choice choices: ['Option_1', 'Option_2', 'Option_3', 'Option_4'], 
+        description: 'Description of Choice Params', 
+        name: 'CHOICE_PARAMETER'
+
     }
     stages{
         stage('First Stage'){
             steps{
                 sh 'sleep 15'
-                echo "Pipeline for Jenkins Boolean Parameters"
-                echo "Boolean: ${params.RUN_PROJECT}"
+                echo "These are the Jenkins Parameters"
+                echo "Boolean: ${params.BOOLEAN_PARAMATER}"
+                echo "String: ${params.STRING_PARAMATER}"
+                echo "Choice: ${params.CHOICE_PARAMETER}"
             }
         }
     }
