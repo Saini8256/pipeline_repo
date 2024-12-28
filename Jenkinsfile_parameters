@@ -8,6 +8,7 @@ pipeline{
             steps{
                 sh 'sleep 15'
                 echo "Pipeline for Jenkins Boolean Parameters"
+                echo "Boolean: ${params.RUN_PROJECT}"
             }
         }
     }
