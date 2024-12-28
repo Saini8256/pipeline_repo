@@ -12,6 +12,10 @@ pipeline{
         description: 'Description of Choice Params', 
         name: 'CHOICE_PARAMETER'
 
+        file description: 'Description for file location', 
+        name: 'FILE_LOCATION'
+
+
     }
     stages{
         stage('First Stage'){
@@ -21,6 +25,7 @@ pipeline{
                 echo "Boolean Parameter Name: ${params.BOOLEAN_PARAMATER}"
                 echo "String Parameter Name: ${params.STRING_PARAMATER}"
                 echo "Choice Parameter Name: ${params.CHOICE_PARAMETER}"
+                echo "Choice Parameter Name: ${params.FILE_LOCATION}"
             }
         }
     }
