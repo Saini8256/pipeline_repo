@@ -1,6 +1,14 @@
 pipeline{
     agent any
     stages{
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM',
+                branches: [[name: "${GIT_BRANCH}"]],
+                userRemoteConfigs: [[credentialsId: "${GIT_CREDENTIALS}", 
+                url: "${GIT_URL}"]]])
+            }
+        }
         stage('First Stage'){
             when{
                 branch 'main'
