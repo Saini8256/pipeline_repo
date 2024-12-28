@@ -1,9 +1,13 @@
 pipeline{
     agent any
+    parameters {
+        booleanParam defaultValue: false, name: 'RUN_PROJECT'
+    }
     stages{
         stage('First Stage'){
             steps{
-                echo "Pipeline for Jenkins Parameters"
+                sh 'sleep 15'
+                echo "Pipeline for Jenkins Boolean Parameters"
             }
         }
     }
