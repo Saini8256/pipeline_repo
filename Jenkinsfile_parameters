@@ -1,7 +1,7 @@
 pipeline{
     agent any
     parameters {
-        booleanParam defaultValue: true, name: 'RUN_PROJECT'
+        booleanParam defaultValue: true, name: 'BOOLEAN_pARAMATER'
         string defaultValue: 'Default_String_Params', 
         description: 'This is the description for string params', 
         name: 'STRING_PARAMATER', 
