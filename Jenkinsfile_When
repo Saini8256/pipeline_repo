@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+    stages{
+        stage('First Stage'){
+            when{
+                branch 'main'
+            }
+            steps{
+                sh 'sleep 5'
+                echo "This is executing main branch"
+            }
+        }
+        stage('Second Stage'){
+            when{
+                branch 'master'
+            }
+            steps{
+                sh 'sleep 5'
+                echo "This is executing master branch"
+            }
+        }
+    }
+}
