@@ -1,7 +1,11 @@
 pipeline{
     agent any
     parameters {
-        booleanParam defaultValue: false, name: 'RUN_PROJECT'
+        booleanParam defaultValue: true, name: 'RUN_PROJECT'
+        string defaultValue: 'Default_String_Params', 
+        description: 'This is the description for string params', 
+        name: 'STRING_PARAMATER', 
+        trim: true
     }
     stages{
         stage('First Stage'){
