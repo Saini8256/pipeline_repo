@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+    options {
+        ansiColor('xterm')
+        buildDiscarder(logRotator(numToKeepStr: '2'))
+        //disableConcurrentBuilds(abortPrevious: true)
+        //retry(2)
+        //timeout(time: 1, unit: 'HOURS')
+        //timestamps()
+    }
+    stages {
+        stage('STAGE1') {
+            steps {
+               echo "This is STAGE 1"
+               sh 'sleep 3'
+            }
+        }
+        stage('STAGE2') {
+            input{
+                message "Can we continue?"
+                ok "Yes, please go ahead"
+                parameters {
+                    string(name: 'Request' , defaultValue: 'Please approve sir.')
+                }
+            }
+            steps {
+                echo "This is STAGE 2"
+                sh 'sleep 5'
+            }
+        }
+    }
+    post {
+        always {
+            cleanWs()
+            echo "The build may be Success / Failure / Aborted / Unstable"
+        }
+        failure{
+            echo "This build is Failed"
+        }
+        aborted {
+            echo "This build is Aborted"
+        }
+        unstable {
+            echo "This build is Unstable"
+        }
+    }
+}
