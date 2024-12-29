@@ -2,15 +2,15 @@ pipeline{
     agent any
     options {
         //ansiColor('xterm')
-        buildDiscarder(logRotator(numToKeepStr: '3'))
+        buildDiscarder(logRotator(numToKeepStr: '2'))
         //disableConcurrentBuilds(abortPrevious: true)
         //retry(2)
         //timeout(time: 1, unit: 'HOURS')
-        timestamps()
+        //timestamps()
     }
     triggers{
         //cron('5 * * * *')
-        pollSCM('* * * * *')
+        //pollSCM('* * * * *')
     }
     stages{
         stage('First Stage'){
