@@ -1,5 +1,13 @@
 pipeline {
     agent any
+    options {
+        ansiColor('xterm')
+        buildDiscarder(logRotator(numToKeepStr: '2'))
+        //disableConcurrentBuilds(abortPrevious: true)
+        //retry(2)
+        //timeout(time: 1, unit: 'HOURS')
+        //timestamps()
+    }
     stages {
         stage('STAGE1') {
             steps {
