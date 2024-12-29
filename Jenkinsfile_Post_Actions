@@ -24,6 +24,7 @@ pipeline {
     }
     post {
         always {
+            cleanWs()
             echo "The build may be Success / Failure / Aborted / Unstable"
         }
         failure{
