@@ -18,12 +18,12 @@ pipeline {
 
         stage('STAGE2') {
             steps {
+                catchError(stageResult: 'FAILURE' , buildResult: 'SUCCESS') {
                 sh 'exit 1'
                 echo "This is STAGE 2"
-                sh 'sleep 5'
+                }
             }
         }
-
         stage('STAGE3') {
             steps {
                 echo "This is STAGE 3"
@@ -38,7 +38,7 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
             cleanWs()
