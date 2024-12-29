@@ -16,12 +16,12 @@ pipeline {
             }
         }
         stage('STAGE2') {
-            steps {
-                input{
+            input{
                     message "Can we continue?"
                     ok "Yes please go ahead"
                 }
-               echo "This is STAGE 2"
+            steps {
+                               echo "This is STAGE 2"
                sh 'sleep 5'
             }
         }
