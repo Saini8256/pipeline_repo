@@ -16,6 +16,7 @@ pipeline {
     }
     post {
         always {
+            sh 'exit 1'
             echo "The build is Success / Failure / Unstable"
         }
         failure{
