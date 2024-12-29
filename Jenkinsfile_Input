@@ -20,7 +20,7 @@ pipeline {
                 message "Can we continue?"
                 ok "Yes please go ahead"
                 parameters {
-                    string(name: 'CEO' , defaultValue: 'Mr. Rahul Saini!!!')
+                    string(name: 'Owner' , defaultValue: 'Mr. Rahul Saini please approve!!!')
                 }
             }
             steps {
