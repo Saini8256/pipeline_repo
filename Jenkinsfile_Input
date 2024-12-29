@@ -20,7 +20,7 @@ pipeline {
                 message "Can we continue?"
                 ok "Yes please go ahead"
                 parameters {
-                    string(name: 'PERSION' , defaultValue 'Mr. Jenkins!!!')
+                    string(name: 'PERSION' , defaultValue: 'Mr. Jenkins!!!')
                 }
             }
             steps {
