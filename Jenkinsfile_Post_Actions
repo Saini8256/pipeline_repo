@@ -24,10 +24,16 @@ pipeline {
     }
     post {
         always {
-                        echo "The build is Success / Failure / Unstable"
+            echo "The build may be Success / Failure / Aborted / Unstable"
         }
         failure{
             echo "This build is Failed"
+        }
+        aborted {
+            echo "This build is Aborted"
+        }
+        unstable {
+            echo "This build is Unstable"
         }
     }
 }
