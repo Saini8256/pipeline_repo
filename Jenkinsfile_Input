@@ -18,9 +18,9 @@ pipeline {
         stage('STAGE2') {
             input{
                 message "Can we continue?"
-                ok "Yes please go ahead"
+                ok "Yes, please go ahead"
                 parameters {
-                    string(name: 'Owner' , defaultValue: 'Mr. Rahul Saini please approve!!!')
+                    string(name: 'Request' , defaultValue: 'Please approve sir.')
                 }
             }
             steps {
