@@ -2,7 +2,7 @@ pipeline {
     agent any
     options {
         ansiColor('xterm')
-        buildDiscarder(logRotator(numToKeepStr: '2'))
+        buildDiscarder(logRotator(numToKeepStr: '3'))
         //disableConcurrentBuilds(abortPrevious: true)
         //retry(2)
         //timeout(time: 1, unit: 'HOURS')
@@ -19,7 +19,7 @@ pipeline {
         stage('STAGE2') {
             steps {
                 catchError(stageResult: 'FAILURE' , buildResult: 'SUCCESS') {
-                sh 'exit 1'
+                sh 'exit 1' //exit 0 is Success, exit 1 ()non zero is fail.
                 echo "This is STAGE 2"
                 }
             }
