@@ -11,13 +11,17 @@ pipeline {
     stages {
         stage('STAGE1') {
             steps {
-               echo "This is STAGE 3"
-               sh 'sleep 4'
+               echo "This is STAGE 1"
+               sh 'sleep 3'
             }
         }
         stage('STAGE2') {
             steps {
-               echo "This is STAGE 5"
+                input{
+                    message "Can we continue?"
+                    ok "Yes please go ahead"
+                }
+               echo "This is STAGE 2"
                sh 'sleep 5'
             }
         }
