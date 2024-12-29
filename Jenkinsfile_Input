@@ -19,7 +19,10 @@ pipeline {
             input{
                 message "Can we continue?"
                 ok "Yes please go ahead"
+                parameters {
+                    string(name: 'PERSION' , defaultValue 'Mr. Jenkins!!!')
                 }
+            }
             steps {
                 echo "This is STAGE 2"
                 sh 'sleep 5'
