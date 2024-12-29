@@ -11,13 +11,13 @@ pipeline {
     stages {
         stage('STAGE1') {
             steps {
-               echo "This is STAGE 1"
+               echo "This is STAGE 10"
                sh 'sleep 4'
             }
         }
         stage('STAGE2') {
             steps {
-               echo "This is STAGE 2"
+               echo "This is STAGE 20"
                sh 'sleep 5'
             }
         }
